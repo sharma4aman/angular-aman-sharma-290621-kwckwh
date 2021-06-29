@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Gender</th>
+  </tr>
+  <tr *ngFor="let candidate of candidates">
+    <td>{{candidate.first_name}}</td>
+    <td>{{candidate.last_name}}</td>
+    <td>{{candidate.email}}</td>
+    <td>{{candidate.gender}}</td>
+  </tr>
+</table>

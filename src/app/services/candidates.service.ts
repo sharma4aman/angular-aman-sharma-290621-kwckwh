@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+// import { CANDIDATES } from '../resources/mock-candidates.constant';
+
 export interface Candidate {
   id: Number;
   first_name: string;
@@ -8,8 +10,17 @@ export interface Candidate {
 }
 
 @Injectable()
-export class StudentService {
-  private candidates: Candidate[] = [];
+export class CandidateService {
+  CANDIDATES: Candidate[] = [
+    {
+      id: 1,
+      first_name: 'John',
+      last_name: 'Doe',
+      gender: 'Male',
+      email: 'john.doe@email.com'
+    }
+  ];
+  private candidates: Candidate[] = this.CANDIDATES;
 
   public getAll(): Candidate[] {
     return this.candidates;
@@ -22,6 +33,7 @@ export class StudentService {
   }
 
   public setDefaultCandidates(candidates: Candidate[]) {
+    //At Bootstrapping
     this.candidates.concat(candidates);
   }
 }
